@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Apogee</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+        <script type="text/javascript" src="/apogeejs-model-lib/src/webGlobals.js"></script>
+        <script type="text/javascript" src="/apogeejs-model-lib/src/debugHook.js"></script>
+        <script type="module" src="/apogeejs-web-app/src/app.js"></script>
+        <script type="text/javascript">
+            const includeBasePathInfo = {
+                "resources": "/apogeejs-admin/resources",
+                "aceIncludes": "/apogeejs-admin/ext/ace/ace_1.4.3/ace_includes"
+            };
+
+            const __apogee_version__ = "0.0.0 (unreleased)";
+            const __browser__ = true;
+        </script>
+
+        <link rel="stylesheet" type="text/css" href="/prosemirror-admin/compiledCss/editor.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/src/apogeeapp.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/src/componentdisplay/ComponentDisplay.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-appview-lib/src/componentdisplay/LiteratePage.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-appview-lib/src/editor/toolbar/ApogeeToolbar.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/window/dialog.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/displayandheader/DisplayAndHeader.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/menu/Menu.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/splitpane/SplitPane.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/tabframe/TabFrame.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/tooltip/tooltip.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/treecontrol/TreeControl.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/configurablepanel/ConfigurablePanel.css">     
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/configurablepanel/elements/ListElement.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-web-app/src/fileaccess/combinedFileAccess.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.full.min.css">
+        
+	</head>
+    <body onload="init(includeBasePathInfo)" onbeforeunload="return beforeUnloadHandler()">
+        <div id="appContainer"></div>
+	</body>
+</html>
