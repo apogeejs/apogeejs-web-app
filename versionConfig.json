@@ -1,0 +1,9 @@
+{
+    "about": "This version of the config file should be used for a distribution to the Apogee web site",
+    "isOfficialRelease": false,
+    "versionReleaseHost": "https://apogeejs.com",
+    "version": "2.0.0-p1",
+    "pathMapping": {
+
+    }
+}
