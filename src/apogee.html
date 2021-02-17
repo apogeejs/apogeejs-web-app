@@ -7,15 +7,29 @@
     
         <script type="text/javascript" src="/apogeejs-model-lib/src/webGlobals.js"></script>
         <script type="text/javascript" src="/apogeejs-model-lib/src/debugHook.js"></script>
-        <script type="module" src="/apogeejs-web-app/src/app.js"></script>
+        <script type="module" src="/apogeejs-appview-lib/src/apogeeAppBundle.js"></script>
         <script type="text/javascript">
             const includeBasePathInfo = {
-                "resources": "/apogeejs-admin/resources",
+                "resources": "/apogeejs-appview-lib/resources",
                 "aceIncludes": "/apogeejs-admin/ext/ace/ace_1.4.3/ace_includes"
             };
 
             const __apogee_version__ = "0.0.0 (unreleased)";
             const __browser__ = true;
+
+            function beforeUnloadHandler() {
+                if(getWorkspaceIsDirty()) {
+                    return "There is unsaved data. Exit?";
+                }
+                else {
+                    return undefined;
+                }
+            }
+        </script>
+        <script type="module">
+            import CombinedFileAccessAppConfigManager from "/apogeejs-web-app/src/fileaccess/CombinedFileAccessAppConfigManager.js"
+            //create an instance of the app config manager and make it available to this page.
+            __globals__.appConfigManager = new CombinedFileAccessAppConfigManager();
         </script>
 
         <link rel="stylesheet" type="text/css" href="/prosemirror-admin/compiledCss/editor.css">
@@ -36,7 +50,7 @@
         <link rel="stylesheet" type="text/css" href="/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.full.min.css">
         
 	</head>
-    <body onload="init(includeBasePathInfo)" onbeforeunload="return beforeUnloadHandler()">
+    <body onload="appInit(appConfigManager,includeBasePathInfo)" onbeforeunload="return beforeUnloadHandler()">
         <div id="appContainer"></div>
 	</body>
 </html>
