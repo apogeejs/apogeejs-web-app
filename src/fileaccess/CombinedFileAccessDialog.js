@@ -1,5 +1,9 @@
-import {uiutil, dialogMgr}  from "/apogeejs-ui-lib/src/apogeeUiLib.js";
+//import {uiutil, dialogMgr}  from "/apogeejs-ui-lib/src/apogeeUiLib.js";
 import * as fileAccessConstants from "/apogeejs-web-app/src/fileaccess/fileAccessConstants.js";
+
+///////////////////////////
+const {uiutil,dialogMgr} = apogeeui;
+///////////////////////////
 
 export default class CombinedAccessDialog {
     constructor(action,fileMetadata,fileData,sourceGeneratorList,onComplete) {

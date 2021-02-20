@@ -1,4 +1,3 @@
-import {BaseFileAccess} from "/apogeejs-app-lib/src/apogeeAppLib.js";
 import ClipboardFileSourceGenerator from "/apogeejs-web-app/src/fileaccess/clipboard/ClipboardFileSource.js";
 import OneDriveFileSourceGenerator from "/apogeejs-web-app/src/fileaccess/onedrive/OneDriveFileSource.js";
 import CombinedAccessDialog from "/apogeejs-web-app/src/fileaccess/CombinedFileAccessDialog.js";
@@ -9,14 +8,13 @@ import * as fileAccessConstants from "/apogeejs-web-app/src/fileaccess/fileAcces
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-export default class CombinedFileAccess extends BaseFileAccess {
+export default class CombinedFileAccess {
     
     //========================================
     // Public
     //========================================
     
     constructor() {
-        super();
         this.defaultSourceId = ClipboardFileSourceGenerator.getSourceId();
         this.sourceGeneratorList = [ClipboardFileSourceGenerator,OneDriveFileSourceGenerator];
     }

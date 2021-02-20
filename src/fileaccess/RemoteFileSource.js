@@ -1,6 +1,10 @@
-import apogeeutil from "/apogeejs-util-lib/src/apogeeUtilLib.js";
-import {uiutil,showConfigurableDialog}  from "/apogeejs-ui-lib/src/apogeeUiLib.js";
+//import apogeeutil from "/apogeejs-util-lib/src/apogeeUtilLib.js";
+//import {uiutil,showConfigurableDialog}  from "/apogeejs-ui-lib/src/apogeeUiLib.js";
 import * as fileAccessConstants from "/apogeejs-web-app/src/fileaccess/fileAccessConstants.js";
+
+///////////////////////////
+const {uiutil,showConfigurableDialog} = apogeeui;
+///////////////////////////
 
 /** This is generic remote file source to be used with CombinedFileAccess.
  * To create a specific instance, pass in the source generator and a file system instance object.

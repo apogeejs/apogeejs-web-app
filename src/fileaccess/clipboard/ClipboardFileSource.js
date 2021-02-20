@@ -1,6 +1,11 @@
-import ace from "/apogeejs-admin/ext/ace/ace_1.4.3/ace.es.js";
-import {uiutil}  from "/apogeejs-ui-lib/src/apogeeUiLib.js";
+//import ace from "/apogeejs-admin/ext/ace/ace_1.4.3/ace.es.js";
+//import {uiutil}  from "/apogeejs-ui-lib/src/apogeeUiLib.js";
 import * as fileAccessConstants from "/apogeejs-web-app/src/fileAccess/fileAccessConstants.js";
+
+///////////////////////////
+const {uiutil} = apogeeui;
+const {ace} = apogeeview;
+///////////////////////////
 
 let ClipboardFileSourceGenerator = {
     getSourceId: function() {

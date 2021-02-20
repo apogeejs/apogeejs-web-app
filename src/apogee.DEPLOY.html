@@ -4,22 +4,37 @@
 		<title>Apogee</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <base href="BASE_HREF" target="_blank">
-        <script type="text/javascript" src="webGlobals.js"></script>
-        <script type="text/javascript" src="debugHook.js"></script>
-        <script type="module" src="apogeeWebApp.js"></script>
+        <base href="[BASE_HREF]" target="_blank">
+        <script type="text/javascript" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/webGlobals.js"></script>
+        <script type="text/javascript" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/debugHook.js"></script>
+        <script type="module" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/apogeeAppBundle.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/cssBundle.css">
+        <link rel="stylesheet" type="text/css" href="./combinedFileAccess.css">
         <script type="text/javascript">
             const includeBasePathInfo = {
-                "resources": "resources",
-                "aceIncludes": "ace_includes"
+                "resources": "../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/resources",
+                "aceIncludes": "../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/ace_includes"
             };
 
-            const __apogee_version__ = "APOGEE_VERSION";
+            const __apogee_version__ = "[RELEASE_VERSION]";
             const __browser__ = true;
+
+            function beforeUnloadHandler() {
+                if(getWorkspaceIsDirty()) {
+                    return "There is unsaved data. Exit?";
+                }
+                else {
+                    return undefined;
+                }
+            }
         </script>
-        <link rel="stylesheet" type="text/css" href="cssBundle.css">
+        <script type="module">
+            import CombinedFileAccessAppConfigManager from "./CombinedFileAccessAppConfigManager.js"
+            //create an instance of the app config manager and make it available to this page.
+            __globals__.appConfigManager = new CombinedFileAccessAppConfigManager();
+        </script>
 	</head>
-    <body onload="init(includeBasePathInfo)" onbeforeunload="return beforeUnloadHandler()">
+    <body onload="appInit(appConfigManager,includeBasePathInfo)" onbeforeunload="return beforeUnloadHandler()">
         <div id="appContainer"></div>
 	</body>
 </html>
