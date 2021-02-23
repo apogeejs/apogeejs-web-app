@@ -10,7 +10,14 @@
         <script type="module" src="/apogeejs-appview-lib/src/apogeeAppBundle.js"></script>
         <script type="text/javascript">
             const includeBasePathInfo = {
-                "resources": "/apogeejs-appview-lib/resources",
+                "resources": {
+                    "defaultResourcePath": "/apogeejs-appview-lib/resources",
+                    "domainMap": {
+                        "ui-lib": "/apogeejs-ui-lib/resources",
+                        "app": "/apogeejs-appview-lib/resources",
+                        "combined-file-access": "/apogeejs-combined-file-access/resources"
+                    }
+                },
                 "aceIncludes": "/apogeejs-admin/ext/ace/ace_1.4.3/ace_includes"
             };
 
@@ -33,20 +40,20 @@
         </script>
 
         <link rel="stylesheet" type="text/css" href="/prosemirror-admin/compiledCss/editor.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/src/apogeeapp.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/src/componentdisplay/ComponentDisplay.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-appview-lib/src/componentdisplay/LiteratePage.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-appview-lib/src/editor/toolbar/ApogeeToolbar.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/window/dialog.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/displayandheader/DisplayAndHeader.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/menu/Menu.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/splitpane/SplitPane.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/tabframe/TabFrame.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/tooltip/tooltip.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/treecontrol/TreeControl.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/configurablepanel/ConfigurablePanel.css">     
-        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/src/configurablepanel/elements/ListElement.css">
-        <link rel="stylesheet" type="text/css" href="/apogeejs-web-app/src/fileaccess/combinedFileAccess.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/style/apogeeapp.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-view-lib/style/ComponentDisplay.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-appview-lib/style/LiteratePage.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-appview-lib/style/ApogeeToolbar.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/dialog.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/DisplayAndHeader.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/Menu.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/SplitPane.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/TabFrame.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/tooltip.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/TreeControl.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/ConfigurablePanel.css">     
+        <link rel="stylesheet" type="text/css" href="/apogeejs-ui-lib/style/ListElement.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-combined-file-access/style/combinedFileAccess.css">
         <link rel="stylesheet" type="text/css" href="/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.full.min.css">
         
 	</head>
