@@ -1,0 +1,36 @@
+{
+    "repoName": "apogeejs-web-app",
+
+    "esModule": {
+        "taskList": [
+            {
+                "type": "copyFileList",
+                "srcFileUrlList": [
+                    "/apogeejs-web-app/versionInfo.json"
+                ]
+            },
+            {
+                "type": "copyAndReplace",
+                "srcFileUrl": "/apogeejs-web-app/web/apogee.html",
+                "replacementList": [
+                    {
+                        "marker": "[RELEASE_VERSION]",
+                        "name": "RELEASE_VERSION"
+                    },
+                    {
+                        "marker": "[APOGEE_BUNDLE_VERSION]",
+                        "name": "APOGEE_BUNDLE_VERSION"
+                    },
+                    {
+                        "marker": "[COMBINED_FILE_ACCESS_VERSION]",
+                        "name": "COMBINED_FILE_ACCESS_VERSION"
+                    },
+                    {
+                        "marker": "[BASE_HREF]",
+                        "name": "BASE_HREF"
+                    }
+                ]
+            }
+        ]
+    }
+}

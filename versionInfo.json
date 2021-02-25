@@ -1,0 +1,12 @@
+{
+    "version": "2.0.0-p1",
+    "isProductionRelease": false,
+    "buildInfoUrl": "/apogeejs-web-app/buildInfo.json",
+    "pathMapping": {},
+    "replacementValues": {
+        "RELEASE_VERSION": "2.0.0-p1",
+        "APOGEE_BUNDLE_VERSION": "2.0.0-p1",
+        "COMBINED_FILE_ACCESS_VERSION": "2.0.0-p1",
+        "BASE_HREF": "/apogeejs-admin/releases-dev/es/apogeejs-web-app/v2.0.0-p1/"
+    }
+}

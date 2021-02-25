@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <base href="[BASE_HREF]" target="_blank">
-        <script type="text/javascript" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/webGlobals.js"></script>
-        <script type="text/javascript" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/debugHook.js"></script>
-        <script type="module" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/apogeeAppBundle.js"></script>
-        <link rel="stylesheet" type="text/css" href="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/cssBundle.css">
-        <link rel="stylesheet" type="text/css" href="./combinedFileAccess.css">
+        <script type="text/javascript" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/src/webGlobals.js"></script>
+        <script type="text/javascript" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/src/debugHook.js"></script>
+        <script type="module" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/src/apogeeAppBundle.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/style/cssBundle.css">
+        <link rel="stylesheet" type="text/css" href="../../apogeejs-combined-file-access/v[COMBINED_FILE_ACCESS_VERSION]/style/combinedFileAccess.css">
         <script type="text/javascript">
             const includeBasePathInfo = {
                 "resources": "../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/resources",
@@ -29,7 +29,7 @@
             }
         </script>
         <script type="module">
-            import CombinedFileAccessAppConfigManager from "./CombinedFileAccessAppConfigManager.js"
+            import CombinedFileAccessAppConfigManager from "../../apogeejs-combined-file-access/v[COMBINED_FILE_ACCESS_VERSION]/src/CombinedFileAccessAppConfigManager.js"
             //create an instance of the app config manager and make it available to this page.
             __globals__.appConfigManager = new CombinedFileAccessAppConfigManager();
         </script>
