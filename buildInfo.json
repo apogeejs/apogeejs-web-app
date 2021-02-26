@@ -15,19 +15,19 @@
                 "replacementList": [
                     {
                         "marker": "[RELEASE_VERSION]",
-                        "name": "RELEASE_VERSION"
+                        "libVersion": "this"
                     },
                     {
                         "marker": "[APOGEE_BUNDLE_VERSION]",
-                        "name": "APOGEE_BUNDLE_VERSION"
+                        "libVersion": "apogeejs-app-bundle"
                     },
                     {
                         "marker": "[COMBINED_FILE_ACCESS_VERSION]",
-                        "name": "COMBINED_FILE_ACCESS_VERSION"
+                        "libVersion": "apogeejs-combined-file-access"
                     },
                     {
                         "marker": "[BASE_HREF]",
-                        "name": "BASE_HREF"
+                        "additionalValue": "BASE_HREF"
                     }
                 ]
             }
