@@ -5,8 +5,5 @@
     "dependentVersions": {
         "apogeejs-app-bundle": {"version": "2.0.0-p1", "isProductionRelease": false},
         "apogeejs-combined-file-access": {"version": "2.0.0-p1", "isProductionRelease": false}
-    },
-    "additionalValues": {
-        "BASE_HREF": "/apogeejs-admin/releases-dev/es/apogeejs-web-app/v2.0.0-p1/"
     }
 }

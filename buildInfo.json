@@ -15,19 +15,23 @@
                 "replacementList": [
                     {
                         "marker": "[RELEASE_VERSION]",
-                        "libVersion": "this"
+                        "lib": "this",
+                        "type": "version"
                     },
                     {
-                        "marker": "[APOGEE_BUNDLE_VERSION]",
-                        "libVersion": "apogeejs-app-bundle"
+                        "marker": "[APOGEE_BUNDLE_PATH]",
+                        "lib": "apogeejs-app-bundle",
+                        "type": "deployPath"
                     },
                     {
-                        "marker": "[COMBINED_FILE_ACCESS_VERSION]",
-                        "libVersion": "apogeejs-combined-file-access"
+                        "marker": "[COMBINED_FILE_ACCESS_PATH]",
+                        "lib": "apogeejs-combined-file-access",
+                        "type": "deployPath"
                     },
                     {
-                        "marker": "[BASE_HREF]",
-                        "additionalValue": "BASE_HREF"
+                        "marker": "[RELEASE_PATH]",
+                        "lib": "this",
+                        "type": "deployPath"
                     }
                 ]
             }

@@ -4,16 +4,16 @@
 		<title>Apogee</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <base href="[BASE_HREF]" target="_blank">
-        <script type="text/javascript" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/src/webGlobals.js"></script>
-        <script type="text/javascript" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/src/debugHook.js"></script>
-        <script type="module" src="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/src/apogeeAppBundle.js"></script>
-        <link rel="stylesheet" type="text/css" href="../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/style/apogeeAppBundle.css">
-        <link rel="stylesheet" type="text/css" href="../../apogeejs-combined-file-access/v[COMBINED_FILE_ACCESS_VERSION]/style/combinedFileAccess.css">
+        <base href="[RELEASE_PATH]" target="_blank">
+        <script type="text/javascript" src="[APOGEE_BUNDLE_PATH]/src/webGlobals.js"></script>
+        <script type="text/javascript" src="[APOGEE_BUNDLE_PATH]/src/debugHook.js"></script>
+        <script type="module" src="[APOGEE_BUNDLE_PATH]/src/apogeeAppBundle.js"></script>
+        <link rel="stylesheet" type="text/css" href="[APOGEE_BUNDLE_PATH]/style/apogeeAppBundle.css">
+        <link rel="stylesheet" type="text/css" href="[COMBINED_FILE_ACCESS_PATH]/style/combinedFileAccess.css">
         <script type="text/javascript">
             const includeBasePathInfo = {
-                "resources": "../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/resources",
-                "aceIncludes": "../../apogeejs-app-bundle/v[APOGEE_BUNDLE_VERSION]/ace_includes"
+                "resources": "[APOGEE_BUNDLE_PATH]/resources",
+                "aceIncludes": "[APOGEE_BUNDLE_PATH]/ace_includes"
             };
 
             const __apogee_version__ = "[RELEASE_VERSION]";
@@ -29,7 +29,7 @@
             }
         </script>
         <script type="module">
-            import CombinedFileAccessAppConfigManager from "../../apogeejs-combined-file-access/v[COMBINED_FILE_ACCESS_VERSION]/src/CombinedFileAccessAppConfigManager.js"
+            import CombinedFileAccessAppConfigManager from "[COMBINED_FILE_ACCESS_PATH]/src/CombinedFileAccessAppConfigManager.js"
             //create an instance of the app config manager and make it available to this page.
             __globals__.appConfigManager = new CombinedFileAccessAppConfigManager();
         </script>
