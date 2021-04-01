@@ -1,40 +1,107 @@
 {
     "repoName": "apogeejs-web-app",
-
-    "esModule": {
-        "taskList": [
-            {
-                "type": "copyFileList",
-                "srcFileUrlList": [
-                    "/apogeejs-web-app/versionInfo.json"
-                ]
-            },
-            {
-                "type": "copyAndReplace",
-                "srcFileUrl": "/apogeejs-web-app/web/apogee.html",
-                "replacementList": [
-                    {
-                        "marker": "[RELEASE_VERSION]",
-                        "lib": "this",
-                        "type": "version"
-                    },
-                    {
-                        "marker": "[APOGEE_BUNDLE_PATH]",
-                        "lib": "apogeejs-app-bundle",
-                        "type": "deployPath"
-                    },
-                    {
-                        "marker": "[COMBINED_FILE_ACCESS_PATH]",
-                        "lib": "apogeejs-combined-file-access",
-                        "type": "deployPath"
-                    },
-                    {
-                        "marker": "[RELEASE_PATH]",
-                        "lib": "this",
-                        "type": "deployPath"
-                    }
-                ]
+    "taskList": [
+        {
+            "type": "copyFileList",
+            "srcFileUrlList": [
+                "/apogeejs-web-app/versionInfo.json"
+            ]
+        },
+        {
+            "type": "copyAndReplace",
+            "srcFileUrl": "/apogeejs-web-app/web/apogee.html",
+            "replacementList": [
+                {
+                    "marker": "[RELEASE_VERSION]",
+                    "lib": "this",
+                    "type": "version"
+                },
+                {
+                    "marker": "[DEPLOY_PATH]",
+                    "lib": "this",
+                    "type": "deployPath"
+                }
+            ],
+            "childFolder": "web"
+        },
+        {
+            "type": "concatFileList",
+            "srcFileUrlList": [
+                "/apogeejs-view-lib/style/apogeeapp.css",
+                "/apogeejs-app-bundle/style/LiteratePage.css",
+                "/apogeejs-view-lib/style/ComponentDisplay.css",
+                "/apogeejs-app-bundle/style/ApogeeToolbar.css",
+                "/apogeejs-ui-lib/style/dialog.css",
+                "/apogeejs-ui-lib/style/DisplayAndHeader.css",
+                "/apogeejs-ui-lib/style/Menu.css",
+                "/apogeejs-ui-lib/style/SplitPane.css",
+                "/apogeejs-ui-lib/style/TabFrame.css",
+                "/apogeejs-ui-lib/style/TreeControl.css",
+                "/apogeejs-ui-lib/style/ConfigurablePanel.css",
+                "/apogeejs-ui-lib/style/listElement.css",
+                "/apogeejs-ui-lib/style/tooltip.css",  
+                "/prosemirror-admin/compiledCss/editor.css",    
+                "/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.full.min.css"
+            ],
+            "destFileName": "apogeeAppBundle.css",
+            "childFolder": "apogeejs-app-bundle/style"
+        },
+        {
+            "type": "copyFileList",
+            "srcFileUrlList": [
+                "/apogeejs-ui-lib/resources/**/*",
+                "/apogeejs-app-bundle/resources/**/*"
+            ],
+            "childFolder": "apogeejs-app-bundle/resources"
+        },
+        {
+            "type": "copyFileList",
+            "srcFileUrlList": [
+                "/apogeejs-model-lib/src/debugHook.js",
+                "/apogeejs-model-lib/src/webGlobals.js"
+            ],
+            "childFolder": "apogeejs-app-bundle/src"
+        },
+        {
+            "type": "packageLib",
+            "format": "es",
+            "sourceFileUrl": "/apogeejs-app-bundle/src/apogeeAppBundle.js",
+            "outputFileName": "apogeeAppBundle.js",
+            "childFolder": "apogeejs-app-bundle/src",
+            "externalLibMapping": {
+                "/apogeejs-admin/ext/esprima/esprima_2.7.3/esprima.es.js": "/apogeejs-admin/ext/esprima/esprima_2.7.3/esprima.es.js",
+                "/apogeejs-admin/ext/ace/ace_1.4.3/ace.es.js": "/apogeejs-admin/ext/ace/ace_1.4.3/ace.es.js",
+                "/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.es.js": "/apogeejs-admin/ext/handsontable/handsontable_6.2.0/handsontable.es.js",
+                "/prosemirror-admin/dist/prosemirror-model.es.js": "/prosemirror-admin/dist/prosemirror-model.es.js",
+                "/prosemirror-admin/dist/prosemirror-state.es.js": "/prosemirror-admin/dist/prosemirror-state.es.js",
+                "/prosemirror-admin/dist/prosemirror-transform.es.js": "/prosemirror-admin/dist/prosemirror-transform.es.js",
+                "/prosemirror-admin/dist/prosemirror-view.es.js": "/prosemirror-admin/dist/prosemirror-view.es.js",
+                "/prosemirror-admin/dist/prosemirror-keymap.es.js": "/prosemirror-admin/dist/prosemirror-keymap.es.js",
+                "/prosemirror-admin/dist/prosemirror-commands.es.js": "/prosemirror-admin/dist/prosemirror-commands.es.js",
+                "/prosemirror-admin/dist/prosemirror-gapcursor.es.js": "/prosemirror-admin/dist/prosemirror-gapcursor.es.js"
             }
-        ]
-    }
+        },
+        {
+            "type": "copyFileList",
+            "srcFileUrlList": [
+                "/apogeejs-combined-file-access/style/**/*"
+            ],
+            "childFolder": "apogeejs-combined-file-access/style"
+        },
+        {
+            "type": "copyFileList",
+            "srcFileUrlList": [
+                "/apogeejs-combined-file-access/resources/**/*"
+            ],
+            "childFolder": "apogeejs-combined-file-access/resources"
+        },
+        {
+            "type": "packageLib",
+            "format": "es",
+            "sourceFileUrl": "/apogeejs-combined-file-access/src/CombinedFileAccessAppConfigManager.js",
+            "outputFileName": "CombinedFileAccessAppConfigManager.js",
+            "childFolder": "apogeejs-combined-file-access/src"
+        }
+    ]
+
 }
