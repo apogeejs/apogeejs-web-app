@@ -1,7 +1,7 @@
 {
     "repoName": "apogeejs-web-app",
-    "version": "2.0.0-p1",
-    "isProductionRelease": true,
+    "version": "2.0.0-pDEV",
+    "isProductionRelease": false,
     "suppressReleasePresentCheck": false,
     "buildInfoUrl": "/apogeejs-web-app/buildInfo.json"
 }
