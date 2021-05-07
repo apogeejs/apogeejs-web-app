@@ -34,9 +34,11 @@
             }
         </script>
         <script type="module">
-            import CombinedFileAccessAppConfigManager from "/apogeejs-combined-file-access/src/CombinedFileAccessAppConfigManager.js"
-            //create an instance of the app config manager and make it available to this page.
-            __globals__.appConfigManager = new CombinedFileAccessAppConfigManager();
+            //set up the platform specific functions
+            import CombinedFileAccess from "/apogeejs-combined-file-access/src/CombinedFileAccess.js";
+            import SimpleModuleManager from "/apogeejs-simple-module-manager/src/SimpleModuleManager.js";
+            apogeeplatform.setFileAccessObject(new CombinedFileAccess());
+            apogeeplatform.setModuleManagerClass(SimpleModuleManager);
         </script>
 
         <link rel="stylesheet" type="text/css" href="/prosemirror-admin/compiledCss/editor.css">
@@ -57,7 +59,7 @@
         <link rel="stylesheet" type="text/css" href="/apogeejs-releases/releases/ext/handsontable/v6.2.2/handsontable.full.min.css">
         
 	</head>
-    <body onload="appInit(appConfigManager,includeBasePathInfo)" onbeforeunload="return beforeUnloadHandler()">
+    <body onload="appInit(includeBasePathInfo)" onbeforeunload="return beforeUnloadHandler()">
         <div id="appContainer"></div>
 	</body>
 </html>
