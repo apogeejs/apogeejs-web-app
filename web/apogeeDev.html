@@ -4,10 +4,37 @@
 		<title>Apogee</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- react stuff -->
+        <link rel="stylesheet" type="text/css" href="/apogeejs-app-bundle/style/react/app.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-app-bundle/style/react/selectMenu.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-app-bundle/style/react/splitFrame.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-app-bundle/style/react/treeView.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-app-bundle/style/react/tabView.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-app-bundle/style/react/iconWithStatus.css">
+        <link rel="stylesheet" type="text/css" href="/apogeejs-app-bundle/style/react/componentTab.css">
+        <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+        
+        <script type="text/babel" src="/apogeejs-app-bundle/src/react/iconWithStatus.js"></script>
+        <script type="text/babel" src="/apogeejs-app-bundle/src/react/splitFrame.js"></script>
+        <script type="text/babel" src="/apogeejs-app-bundle/src/react/treeView.js"></script>
+        <script type="text/babel" src="/apogeejs-app-bundle/src/react/selectMenu.js"></script>
+        <script type="text/babel" src="/apogeejs-app-bundle/src/react/tabView.js"></script>
+        <script type="text/babel" src="/apogeejs-app-bundle/src/react/componentTab.js"></script>
+        <script type="text/babel" src="/apogeejs-app-bundle/src/react/app.js"></script>
+
+        <script type="text/babel">
+            //@TODO we have to put app inti here rather than after page load, since it takes longer to run babel standalone here
+            appInit(includeBasePathInfo)
+        </script>
+        <!-- end react stuff -->
     
         <script type="text/javascript" src="/apogeejs-model-lib/src/webGlobals.js"></script>
         <script type="text/javascript" src="/apogeejs-model-lib/src/debugHook.js"></script>
         <script type="module" src="/apogeejs-app-bundle/src/apogeeAppBundle.js"></script>
+
         <script type="text/javascript">
             const includeBasePathInfo = {
                 "resources": {
@@ -64,7 +91,10 @@
         <link rel="stylesheet" type="text/css" href="/apogeejs-releases/releases/ext/handsontable/v6.2.2/handsontable.full.min.css">
         
 	</head>
-    <body onload="appInit(includeBasePathInfo)" onbeforeunload="beforeUnloadHandler()">
+    <!-- <body onload="appInit(includeBasePathInfo)" onbeforeunload="beforeUnloadHandler()">
         <div id="appContainer"></div>
+	</body> -->
+    <body onbeforeunload="beforeUnloadHandler()">
+        <div id="appContainer" class="appContainer"></div>
 	</body>
 </html>
