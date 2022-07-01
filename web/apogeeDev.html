@@ -40,6 +40,18 @@
         <script type="module" src="/apogeejs-app-bundle/src/apogeeAppBundle.js"></script>
 
         <script type="text/javascript">
+            // ///////////////////////////////////////////////////////////////////////////////
+            //I needed for my version of the react es module. 
+            // I should fix that. 
+            // const process = {
+            //     env: {
+            //         NODE_ENV: 'development'
+            //     }
+            // }
+/////////////////////////////////////////////////////////////////// 
+
+
+
             const includeBasePathInfo = {
                 "resources": {
                     "defaultResourcePath": "/apogeejs-app-bundle/resources",
@@ -77,7 +89,42 @@
             apogeeplatform.setExternalOpener(new WebExternalOpener());
         </script>
 
-        <link rel="stylesheet" type="text/css" href="/prosemirror-admin/compiledCss/editor.css">
+        <script>
+            class ApogeeErrorBoundary extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = { hasError: false};
+                }
+
+                static getDerivedStateFromError(error) {
+                    // Update state so the next render will show the fallback UI.
+                    return { hasError: true };
+                }
+
+                // componentDidCatch(error, errorInfo) {
+                //     // You can also log the error to an error reporting service
+                // }
+
+                render() {
+                    if (this.state.hasError) {
+                        return /*#__PURE__*/React.createElement("div", {className: "apogeeErrorBoundary"}, "Error rendering display")
+                    }
+
+                    return this.props.children; 
+                }
+            }
+
+            window.ApogeeErrorBoundary = ApogeeErrorBoundary
+        </script>
+        <style>
+            .apogeeErrorBoundary {
+                color: red;
+                background-color: pink;
+                border: 1px solid red;
+            }
+        </style>
+
+
         <link rel="stylesheet" type="text/css" href="/apogeejs-app-bundle/style/apogeeapp.css">
         <link rel="stylesheet" type="text/css" href="/apogeejs-app-lib/style/ComponentDisplay.css">
         <link rel="stylesheet" type="text/css" href="/apogeejs-app-bundle/style/LiteratePage.css">
